@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "lcc-server",
+  "version": "${version}",
+  "name": "lcc-server",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "org.luminacc.server.main"
+    ]
+  },
+  "mixins": [
+    "lcc-server.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}",
+    "computercraft": "${cct_version}"
+  }
+}
