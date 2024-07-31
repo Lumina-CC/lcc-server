@@ -7,6 +7,14 @@ local function getModem()
 	return modems[1]
 end
 
+function getWirelessModems()
+    return peripheral.find("modem", function(name, router) return router.isWireless() end)
+end
+
+function getWiredModems()
+    return peripheral.find("modem", function(name, router) return not router.isWireless() end)
+end
+
 function send(modem,channel,reply,msg)
 	if msg == nil and modem and channel and reply then
 		return send(getModem(),modem,channel,reply)
