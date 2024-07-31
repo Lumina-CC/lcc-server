@@ -20,7 +20,7 @@ public abstract class WirelessModemPeripheralMixin extends ModemPeripheral {
     protected WirelessModemPeripheralMixin(ModemState state) {
         super(state);
     }
-    @Shadow @Final private boolean advanced;
+    @Shadow(remap = false) @Final private boolean advanced;
 
     /**
      * @author Featherwhisker
@@ -35,7 +35,7 @@ public abstract class WirelessModemPeripheralMixin extends ModemPeripheral {
     }
     @Inject(method = "getRange",at=@At("HEAD"),remap = false,cancellable = true)
     public void getRange(CallbackInfoReturnable<Double> ci) {
-        if (advanced || !isNull(getLevel())) {
+        if (advanced && !isNull(getLevel())) {
             double returnValue = Config.modemHighAltitudeRange * 2;
             if (getLevel().isThundering()) {
                 returnValue = Config.modemHighAltitudeRangeDuringStorm * 2;

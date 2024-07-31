@@ -32,6 +32,9 @@ dependencies {
     //ComputerCraft
     modImplementation "cc.tweaked:cc-tweaked-${project.minecraft_version}-fabric-api:$cctVersion"
     modImplementation "cc.tweaked:cc-tweaked-${project.minecraft_version}-fabric:$cctVersion"
+
+    //modImplementation "cc.tweaked:cc-tweaked-${project.minecraft_version}-common-api:$cctVersion"
+    modImplementation "cc.tweaked:cc-tweaked-${project.minecraft_version}-common:$cctVersion"
 }
 
 processResources {
