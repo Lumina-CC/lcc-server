@@ -1,12 +1,12 @@
 -- Wireless modem relay, does NOT work for wired modems!
-local modem = peripheral.find("modem", function(name, modem)
-    return modem.isWireless() -- Check this modem is wireless.
+local router = peripheral.find("modem", function(name, router)
+    return router.isWireless() -- Check this modem is wireless.
 end)
 print("Wireless modem relay software")
-if not modem then
+if not router then
 	error("No wireless modem present!",0)
 end
-modem.closeAll()
+router.closeAll()
 local relayedIds = {}
 local function cleanup()
 	while true do
@@ -33,10 +33,10 @@ local function relay()
 		if msg and checkMsg(msg) and isNewMsg(msg) then
 			table.insert(relayedIds,msg.id)
 			print(msg.channel,msg.reply,msg.msg)
-			modem.transmit(msg.channel,msg.reply,msg.msg)
-			modem.transmit(0,0,msg)
+			router.transmit(msg.channel,msg.reply,msg.msg)
+			router.transmit(0,0,msg)
 		end
 	end
 end
-modem.open(0)
+router.open(0)
 parallel.waitForAny(cleanup,relay)
