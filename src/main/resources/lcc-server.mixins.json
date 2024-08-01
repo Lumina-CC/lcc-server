@@ -4,6 +4,7 @@
   "package": "org.luminacc.server.mixins",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "ComputerPeripheralMixin",
     "WirelessModemPeripheralMixin"
   ],
   "injectors": {

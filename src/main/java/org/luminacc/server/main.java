@@ -2,7 +2,7 @@ package org.luminacc.server;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
-import net.minecraft.server.command.CommandManager;
+import dan200.computercraft.shared.computer.blocks.ComputerBlockEntity;
 import net.minecraft.text.Text;
 
 import java.util.logging.Logger;
@@ -19,5 +19,6 @@ public class main implements ModInitializer {
                 context.getSource().sendFeedback(() -> Text.literal("Hello, world!"), true);
                 return 1;
             })));
+
     }
 }
