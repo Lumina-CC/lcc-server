@@ -12,6 +12,14 @@ base {
 
 
 repositories {
+    mavenCentral()
+    maven {
+        url "https://squiddev.cc/maven/"
+        content {
+            includeGroup("me.lucko")
+        }
+    }
+
     maven {
         url "https://maven.squiddev.cc"
         content {
@@ -35,6 +43,8 @@ dependencies {
 
     //modImplementation "cc.tweaked:cc-tweaked-${project.minecraft_version}-common-api:$cctVersion"
     //modImplementation "cc.tweaked:cc-tweaked-${project.minecraft_version}-common:$cctVersion"
+    include(modImplementation('me.lucko:fabric-permissions-api:0.2.20221016'))
+    compileOnly 'net.luckperms:api:5.4'
 }
 
 processResources {

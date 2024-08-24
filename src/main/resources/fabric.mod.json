@@ -20,6 +20,8 @@
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
     "minecraft": "${minecraft_version}",
-    "computercraft": "${cct_version}"
+    "computercraft": "${cct_version}",
+    "fabric-permissions-api-v0": "*",
+    "vanilla-permissions": "*"
   }
 }
