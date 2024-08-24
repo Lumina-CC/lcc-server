@@ -3,7 +3,6 @@ package org.luminacc.server.mixins;
 import me.lucko.fabric.api.permissions.v0.Permissions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerAbilities;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -13,7 +12,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(PlayerEntity.class)
 public abstract class CommandBlockPermissionMixin  extends LivingEntity {
-    private PlayerAbilities abilities;
     protected CommandBlockPermissionMixin(EntityType<? extends LivingEntity> entityType, World world) {
         super(entityType, world);
     }
