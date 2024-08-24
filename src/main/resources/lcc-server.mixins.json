@@ -6,7 +6,8 @@
   "mixins": [
     "ComputerPeripheralMixin",
     "WirelessModemPeripheralMixin",
-    "CommandBlockPermissionMixin"
+    "CommandBlockPermissionMixin",
+    "ExperienceOrbMixin"
   ],
   "injectors": {
     "defaultRequire": 1
