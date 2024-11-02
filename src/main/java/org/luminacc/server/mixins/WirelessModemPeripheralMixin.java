@@ -33,21 +33,9 @@ public abstract class WirelessModemPeripheralMixin extends ModemPeripheral {
         }
         return false;
     }
-    @Inject(method = "getRange",at=@At("HEAD"),remap = false,cancellable = true)
-    public void getRange(CallbackInfoReturnable<Double> ci) {
-        if (advanced && !isNull(getLevel())) {
-            double returnValue = Config.modemHighAltitudeRange * 2;
-            if (getLevel().isThundering()) {
-                returnValue = Config.modemHighAltitudeRangeDuringStorm * 2;
-            } else if (getLevel().isRaining()) {
-                returnValue = Config.modemHighAltitudeRange ;
-            }
-            //log.info(String.valueOf(returnValue));
-            ci.setReturnValue(returnValue);
-            ci.cancel();
-        } else if (isNull(getLevel())) {
-            ci.setReturnValue((double) 0);
-            ci.cancel();
-        }
-    }
+    /*
+     * This nerf was removed by Herr Katze for later rewrite as it doesn't fit the spirit of ender modems
+     * The future nerf will not include range, rather it will separate them into its own modem channel.
+     */
+
 }
